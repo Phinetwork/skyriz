@@ -1,0 +1,138 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: transparent; /* Keeps the header transparent at all times */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a slight shadow for separation */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo img {
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Ensure the main content starts below the header */
+body {
+  margin-top: 120px; /* Adjust based on header height (60px + 15px padding x2) */
+}
+
+.menu-toggle {
+  display: none; /* Default is hidden on all screens */
+  font-size: 1.8rem;
+  background: none; /* Default background is none */
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 30%; /* Ensures it's vertically centered */
+  transform: translateY(-50%); /* Centers the hamburger vertically */
+  z-index: 1001;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px; /* Slight rounding for a modern look */
+  display: none; /* Ensures it is hidden by default on all devices */
+  align-items: center; /* Centers the hamburger icon vertically */
+  justify-content: center; /* Centers the hamburger icon horizontally */
+  transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease; /* Smooth transition for hover or click states */
+}
+
+/* Yellow background when menu is open, properly centered */
+.menu-toggle.active {
+  background: #ffc107; /* Yellow background for the toggle when active */
+  width: 40px; /* Adjusted width for proper scaling */
+  height: 40px; /* Adjusted height for proper scaling */
+  border-radius: 50%; /* Makes it a circle */
+  transform: translate(0%, -50%); /* Ensures perfect horizontal and vertical alignment */
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.nav-menu ul li {
+  position: relative;
+}
+
+.nav-menu ul li a {
+  color: #f0f8ff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Only display the menu toggle on mobile devices */
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 70%;
+    padding: 10px 0;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .nav-menu ul li a {
+    padding: 12px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-menu ul li a:last-child {
+    border-bottom: none;
+  }
+}
