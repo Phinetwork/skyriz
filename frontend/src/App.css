@@ -2,11 +2,23 @@
 .App {
   text-align: center;
   background: linear-gradient(135deg, #1e3a8a, #3b82f6); /* Subtle gradient background */
+  background-size: 200% 200%; /* Enlarged background for movement effect */
+  animation: background-move 15s infinite alternate; /* Smooth movement animation */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #ffffff; /* Text color for high contrast */
+}
+
+/* Background animation keyframes */
+@keyframes background-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 /* Logo styling */
