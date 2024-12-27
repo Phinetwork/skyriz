@@ -97,6 +97,16 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
+  <a
+    href="https://search.skyriz.app"
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={() => setIsMenuOpen(false)}
+  >
+    M&A AI Deal Search
+  </a>
+</li>
+                <li>
                   <Link to="/dashboard" onClick={() => setIsMenuOpen(false)}>
                     Dashboard
                   </Link>
