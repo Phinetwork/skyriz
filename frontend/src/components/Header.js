@@ -103,7 +103,7 @@ const Header = () => {
     rel="noopener noreferrer"
     onClick={() => setIsMenuOpen(false)}
   >
-    M&A AI Deal Search
+    AI Deal Search
   </a>
 </li>
                 <li>
