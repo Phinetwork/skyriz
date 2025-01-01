@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './Footer.css'; // Footer styles
-import './chatbot.css'; // Chatbot styles
 import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
